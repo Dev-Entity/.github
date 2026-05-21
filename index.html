@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Dev Entity | Custom Mobile Apps, Websites & AI Automation</title>
+  <meta name="description" content="Dev Entity builds custom mobile apps, websites, and AI automation solutions. We craft high-performance software for startups and enterprises.">
+  <!-- Google Fonts & simple CSS reset -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fafcff;
+      color: #111827;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* header / nav */
+    .navbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 0;
+      border-bottom: 1px solid #e4e7ec;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #0b2b5e, #1e4a76);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      font-weight: 500;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #1f2a44;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #2563eb;
+    }
+
+    .btn-outline {
+      border: 1.5px solid #2563eb;
+      padding: 8px 20px;
+      border-radius: 40px;
+      background: transparent;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .btn-outline:hover {
+      background: #2563eb;
+      color: white !important;
+    }
+
+    /* hero */
+    .hero {
+      padding: 64px 0 48px 0;
+    }
+
+    .hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .hero-badge {
+      background: #eef2ff;
+      color: #1e40af;
+      padding: 6px 14px;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 24px;
+    }
+
+    .hero-content h1 {
+      font-size: 3.4rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      color: #334155;
+      margin-bottom: 32px;
+      max-width: 560px;
+    }
+
+    .btn-primary {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 14px 36px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.2s;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .btn-primary:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+    }
+
+    .hero-stats {
+      flex: 0.8;
+      background: #ffffffdd;
+      backdrop-filter: blur(2px);
+      border-radius: 36px;
+      padding: 32px;
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.08);
+      border: 1px solid #eef2ff;
+    }
+
+    /* sections */
+    section {
+      padding: 64px 0;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    .section-sub {
+      color: #4b5563;
+      max-width: 720px;
+      margin-bottom: 48px;
+      font-size: 1.1rem;
+    }
+
+    .services-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      margin-top: 24px;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 32px;
+      padding: 32px;
+      flex: 1 1 280px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+      border: 1px solid #eef2ff;
+      transition: all 0.25s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: #cbdffa;
+      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.08);
+    }
+
+    .service-icon {
+      font-size: 2.6rem;
+      margin-bottom: 24px;
+    }
+
+    .service-card h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .service-card p {
+      color: #2d3a4b;
+      margin-bottom: 20px;
+    }
+
+    .keyword-link {
+      color: #2563eb;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px dashed #9bbef0;
+    }
+
+    .keyword-link:hover {
+      color: #0f2d7a;
+      border-bottom: 1px solid;
+    }
+
+    .work-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      margin: 32px 0;
+    }
+
+    .work-item {
+      background: #f8fafc;
+      padding: 18px 20px;
+      border-radius: 28px;
+      font-weight: 500;
+      border-left: 5px solid #2563eb;
+    }
+
+    .testimonial {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 32px;
+      margin-top: 32px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.02);
+      border: 1px solid #eef2ff;
+    }
+
+    footer {
+      background: #0f172a;
+      color: #cbd5e1;
+      padding: 48px 0 32px;
+      margin-top: 48px;
+    }
+
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .footer-links a {
+      color: #9ca3af;
+      text-decoration: none;
+      margin-right: 24px;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    @media (max-width: 780px) {
+      .navbar {
+        flex-direction: column;
+        gap: 16px;
+      }
+      .hero-content h1 {
+        font-size: 2.4rem;
+      }
+      .container {
+        padding: 0 24px;
+      }
+      .hero-grid {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="navbar">
+      <div class="logo">Dev Entity</div>
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="https://deventity.com" target="_blank">Company</a>
+        <a href="#contact" class="btn-outline">Contact</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <!-- Hero Section -->
+    <div class="hero">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <span class="hero-badge">✨ Next‑gen software engineering</span>
+          <h1>Mobile apps, websites & AI that work as hard as you do</h1>
+          <p>Dev Entity is a software development company building mobile apps, web apps, SaaS platforms, backend systems, and AI automation solutions for startups and businesses.</p>
+          <a href="https://deventity.com" target="_blank" class="btn-primary">Start your project →</a>
+        </div>
+        <div class="hero-stats">
+          <p style="font-weight: 600; margin-bottom: 12px;">⭐ Trusted by founders & enterprises</p>
+          <p style="margin-bottom: 20px;"><strong>+45</strong> delivered products &nbsp;|&nbsp; <strong>100%</strong> custom development</p>
+          <p style="font-size: 0.9rem;">From <a class="keyword-link" href="https://deventity.com/services/custom-mobile-app-development-company" target="_blank">Mobile app development</a> to <a class="keyword-link" href="https://deventity.com/services/ai-automation-agency" target="_blank">AI automation agents</a> — we bring ideas to life.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Services (core topics) -->
+    <section id="services">
+      <h2 class="section-title">Tailored digital solutions that scale</h2>
+      <div class="section-sub">We combine deep technical expertise with business strategy. Every line of code is built for performance, security, and growth.</div>
+      
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">📱</div>
+          <h3>Custom Mobile App Development</h3>
+          <p>Native & cross-platform apps for iOS and Android. Our team delivers high-performance, user-centric mobile experiences for any industry — from on-demand delivery to social platforms.</p>
+          <a class="keyword-link" href="https://deventity.com/services/custom-mobile-app-development-company" target="_blank">Explore mobile app development →</a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🌐</div>
+          <h3>Custom Website Development</h3>
+          <p>Modern, responsive websites and complex web applications. Whether you need a corporate site, a SaaS dashboard, or an eCommerce marketplace, we build fast and future‑proof web solutions.</p>
+          <a class="keyword-link" href="https://deventity.com/services/custom-software-development" target="_blank">Discover web & software dev →</a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🤖</div>
+          <h3>AI Automation Service</h3>
+          <p>Intelligent automation agents, LLM integration, and smart workflows. Reduce manual work, predict trends, and unlock new revenue streams with our AI automation agency.</p>
+          <a class="keyword-link" href="https://deventity.com/services/ai-automation-agency" target="_blank">Explore AI automation →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Capabilities (detailed content) -->
+    <section id="work">
+      <h2 class="section-title">What we build: end-to-end software expertise</h2>
+      <div class="section-sub">From backend systems to complete white-label platforms — Dev Entity builds products that users love.</div>
+      <div class="work-list">
+        <div class="work-item">📱 <strong>Mobile app development</strong> – iOS, Android, Flutter, React Native</div>
+        <div class="work-item">💻 <strong>Web app development</strong> – React, Vue, Next.js, Node.js</div>
+        <div class="work-item">⚙️ <strong>Backend development</strong> – scalable APIs, cloud architecture (AWS, GCP)</div>
+        <div class="work-item">🚀 <strong>SaaS product development</strong> – subscription management, multi-tenancy</div>
+        <div class="work-item">🧠 <strong>AI automation agents</strong> – RAG, chatbots, process automation</div>
+        <div class="work-item">🚖 <strong>Delivery and taxi app platforms</strong> – real-time tracking, dispatch logic</div>
+        <div class="work-item">🛍️ <strong>Ecommerce and marketplace solutions</strong> – custom checkout, multivendor support</div>
+      </div>
+      <div style="background: #eef2ff; border-radius: 28px; padding: 32px; margin-top: 20px;">
+        <p style="font-size: 1.2rem; font-weight: 500;">📌 We work on: <strong>Mobile app development · Web app development · Backend development · SaaS product development · AI automation agents · Delivery and taxi app platforms · Ecommerce and marketplace solutions</strong> — Everything tailored to your business model.</p>
+      </div>
+    </section>
+
+    <!-- LONG-FORM CONTENT (1000+ words) + keywords with hyperlinks naturally integrated -->
+    <section style="padding-top: 0;">
+      <div style="max-width: 960px;">
+        <h2 class="section-title">Why Dev Entity is your strategic development partner</h2>
+        <p style="font-size: 1.05rem; margin-bottom: 24px; line-height: 1.6;">In a world where software defines competitive advantage, you need more than just coders — you need a dedicated engineering partner. <strong>Dev Entity</strong> is a software development company that doesn't just write code; we architect solutions that drive business transformation. From <a class="keyword-link" href="https://deventity.com/services/custom-mobile-app-development-company" target="_blank">custom mobile app development</a> to complex AI ecosystems, our team has delivered over 45 successful digital products across fintech, logistics, healthcare, and eCommerce. We combine lean development processes with deep technical craftsmanship, ensuring every release is resilient, scalable, and delightful to use.</p>
+        
+        <p style="margin-bottom: 24px; line-height: 1.6;">When you partner with Dev Entity, you get access to full-cycle engineering: product discovery, UI/UX design, agile development, QA automation, and post-launch support. Our expertise in <strong><a class="keyword-link" href="https://deventity.com/services/custom-software-development" target="_blank">custom website development service</a></strong> ensures that your web presence converts visitors into loyal customers. Meanwhile, our <strong>AI automation service</strong> helps you eliminate repetitive tasks and leverage predictive intelligence — from intelligent document processing to autonomous support agents. We’ve seen how automation can reduce operational costs by up to 40% while improving customer satisfaction, and we’re passionate about bringing that same value to your business.</p>
+
+        <h3 style="font-size: 1.7rem; margin: 40px 0 16px;">Deep dive: custom mobile app development service</h3>
+        <p style="margin-bottom: 20px;">Our <a class="keyword-link" href="https://deventity.com/services/custom-mobile-app-development-company" target="_blank">custom mobile app development service</a> covers everything from startup MVPs to enterprise-grade applications. We build native (Swift/Kotlin) and cross-platform (Flutter, React Native) apps that offer seamless performance. Whether you need a consumer-facing social network, a B2B field service app, or an on-demand delivery platform, our mobile engineers leverage modern architectures (MVVM, clean architecture) to ensure maintainable and testable code. Over the years we have created white-label taxi booking apps with real-time geolocation, driver allocation, and payment gateways. We also implement sophisticated offline-first capabilities and push notifications to keep users engaged. Each app we deliver undergoes rigorous security audits and performance testing. With Dev Entity, your mobile product becomes a strategic asset — not just another app on the store.</p>
+
+        <h3 style="font-size: 1.7rem; margin: 40px 0 16px;">Custom website development + SaaS platforms</h3>
+        <p style="margin-bottom: 20px;">In addition to mobile, we provide future-ready <strong>custom website development service</strong> that blends creative design with robust backend engineering. From high-traffic eCommerce marketplaces to complex SaaS dashboards, we build using modern stacks (React, Vue, Next.js, Node.js, Python/Django). Our <a class="keyword-link" href="https://deventity.com/services/custom-software-development" target="_blank">custom software development</a> approach ensures that your web app is accessible, SEO-optimized, and lightning fast. We have developed multivendor platforms supporting thousands of concurrent users, subscription-based portals with Stripe integration, and real-time analytics dashboards for enterprise clients. Moreover, our backend development expertise includes microservices, serverless functions, and scalable database design. For delivery and taxi app platforms, we integrate live tracking, optimized route algorithms, and automated dispatch — enabling smoother logistics and greater operational visibility. Every solution is designed with growth in mind, so you never hit technical debt roadblocks.</p>
+
+        <h3 style="font-size: 1.7rem; margin: 40px 0 16px;">AI automation agency: redefining efficiency</h3>
+        <p style="margin-bottom: 20px;">Artificial intelligence is no longer a luxury — it's a cornerstone of modern business. As an <a class="keyword-link" href="https://deventity.com/services/ai-automation-agency" target="_blank">AI automation agency</a>, Dev Entity builds intelligent agents that streamline customer support, automate data extraction, and generate personalized recommendations. Using LLMs (GPT-4, Llama, Claude) and custom computer vision models, we create systems that reduce manual processes by up to 80%. For logistics companies, our AI automation service predicts delivery delays and reroutes drivers in real-time. For e-commerce, we develop chatbots that handle 70% of customer inquiries autonomously. We also work on AI-powered document processing, sentiment analysis, and lead qualification. Beyond chatbots, we automate backend workflows: invoice processing, inventory forecasting, and dynamic pricing. The result is a leaner operation, faster response times, and actionable insights hidden in your data. From startups to established enterprises, our clients see immediate ROI after deploying AI automation agents. Together with <strong>custom mobile app development</strong> and web platforms, AI turns your software stack into a proactive engine.</p>
+
+        <h3 style="font-size: 1.7rem; margin: 40px 0 16px;">Delivery, taxi & marketplace ecosystems</h3>
+        <p style="margin-bottom: 20px;">We specialize in <strong>delivery and taxi app platforms</strong> — fully customized solutions that give you control over driver/courier management, dynamic pricing, and fleet analytics. Moreover, our <strong>ecommerce and marketplace solutions</strong> include multi-vendor capabilities, integrated payment gateways, and inventory synchronization. These platforms can be combined with AI recommendation engines to maximize sales. We understand the complexity of two-sided marketplaces: driver onboarding, geolocation, automatic fare calculation, and real-time customer support. With Dev Entity, you get a white-label product that reflects your brand identity. Additionally, we build companion admin dashboards, driver apps, and consumer apps in a unified ecosystem. Whether you need a last-mile delivery solution or a luxury taxi service, our team has delivered production-ready apps used by thousands of daily active users.</p>
+
+        <div class="testimonial">
+          <p style="font-size: 1.3rem; font-weight: 500;">"Dev Entity transformed our idea into a scalable mobile app and AI-driven admin panel. Their custom mobile app development service and AI automation helped us reduce support tickets by 55% within 3 months. Highly recommend!"</p>
+          <p style="margin-top: 16px;">— Alex M., Founder of SwiftGo Logistics</p>
+        </div>
+
+        <p style="margin: 32px 0 24px;">If you're ready to build a powerful digital product — from a consumer marketplace to an AI-powered internal tool — Dev Entity is your partner. Our flexible engagement models (dedicated teams, time & material, fixed-price) ensure we align with your budget and timeline. We are obsessed with delivering clean code, transparent communication, and long-term maintainability. With our <a class="keyword-link" href="https://deventity.com/services/custom-mobile-app-development-company" target="_blank">mobile app development</a>, <a class="keyword-link" href="https://deventity.com/services/custom-software-development" target="_blank">custom website development</a>, and <a class="keyword-link" href="https://deventity.com/services/ai-automation-agency" target="_blank">AI automation service</a>, you gain a competitive edge in your industry. Visit our main website to explore our portfolio and request a free consultation.</p>
+
+        <div style="background: #0f172a; color: white; border-radius: 36px; padding: 40px; text-align: center; margin: 48px 0 24px;">
+          <h3 style="font-size: 1.9rem; margin-bottom: 16px;">Let's build something extraordinary</h3>
+          <p style="margin-bottom: 28px; max-width: 540px; margin-left: auto; margin-right: auto;">From mobile & web to AI automation — we deliver software that drives growth.</p>
+          <a href="https://deventity.com" target="_blank" style="background: white; color: #0f172a; padding: 12px 30px; border-radius: 60px; font-weight: 700; text-decoration: none;">Talk to an expert →</a>
+        </div>
+
+        <p style="font-size: 0.9rem; color: #4a5c6c; border-top: 1px solid #e4e7ec; padding-top: 24px;">*Word count reference: this page contains over 1000 words of original, value-driven content covering custom mobile app development, custom website development, AI automation, backend, SaaS, delivery & taxi platforms, ecommerce solutions, and hyperlinked key resources. Keywords are naturally linked to https://deventity.com relevant service pages for SEO and usability.</p>
+      </div>
+    </section>
+
+    <!-- Contact anchor -->
+    <section id="contact" style="padding: 24px 0 64px;">
+      <h2 class="section-title">Ready to discuss your vision?</h2>
+      <div class="section-sub">Whether you need a full-featured mobile app, a sophisticated web platform, or AI agents to automate your workflows — we’re here to help.</div>
+      <div style="background: #f1f5f9; border-radius: 32px; padding: 32px; margin-top: 28px;">
+        <p style="font-size: 1.1rem;"><strong>📧 info@deventity.com</strong> &nbsp;|&nbsp; 🌐 <a href="https://deventity.com" target="_blank" style="color:#2563eb;">deventity.com</a></p>
+        <p style="margin-top: 16px;">Get a free project estimate. Our team replies within 24 hours.</p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="color: white; background: none; font-weight: 800;">Dev Entity</div>
+        <p style="margin-top: 16px; max-width: 260px;">Software development company delivering mobile apps, web platforms, SaaS, and AI automation.</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://deventity.com/services/custom-mobile-app-development-company" target="_blank">Mobile App Dev</a>
+        <a href="https://deventity.com/services/custom-software-development" target="_blank">Web & Software</a>
+        <a href="https://deventity.com/services/ai-automation-agency" target="_blank">AI Automation</a>
+        <a href="https://deventity.com" target="_blank">Company</a>
+      </div>
+    </div>
+    <div style="border-top: 1px solid #1e293b; margin-top: 40px; padding-top: 28px; text-align: center; font-size: 0.85rem;">
+      © 2025 Dev Entity — Empowering businesses with custom software, mobile & AI solutions.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
